@@ -10,7 +10,7 @@ namespace VocabBuilder.DataModel.Sql
 {
     public class WordRepo : IWordRepo
     {
-        private readonly VocabBuilderContext _context;
+        private VocabBuilderContext _context;
 
         public WordRepo()
         {
