@@ -26,5 +26,17 @@ namespace VocabBuilder.DataModel.Sql
                 yield return new Word() { Id = w.Id, Text = w.Text };
             }
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="word"></param>
+        /// <returns>Number of records added</returns>
+        public int AddWord(Word word)
+        {
+            _context.Words.Add(word);
+
+            return _context.SaveChanges();
+        }
     }
 }

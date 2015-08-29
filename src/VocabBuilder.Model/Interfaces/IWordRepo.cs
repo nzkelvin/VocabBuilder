@@ -9,5 +9,6 @@ namespace VocabBuilder.Model.Interfaces
     public interface IWordRepo
     {
         IEnumerable<Word> GetWords();
+        int AddWord(Word word);
     }
 }
