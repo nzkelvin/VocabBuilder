@@ -8,6 +8,12 @@ using VocabBuilder.Model.Interfaces;
 
 namespace VocabBuilder.Web.Controllers
 {
+    public class WordViewModel
+    {
+        public VocabBuilder.Model.Word Word { get; set; }
+        public IEnumerable<VocabBuilder.Model.Word> Words { get; set; }
+    }
+
     public class WordController : Controller
     {
         private readonly IWordRepo _wordRepo;
@@ -21,9 +27,10 @@ namespace VocabBuilder.Web.Controllers
         // GET: /Word/
         public ActionResult Index()
         {
-            var words = _wordRepo.GetWords();
+            var wordViewModel = new WordViewModel();
+            wordViewModel.Words = _wordRepo.GetWords();
 
-            return View(words);
+            return View(wordViewModel);
         }
 
         //
