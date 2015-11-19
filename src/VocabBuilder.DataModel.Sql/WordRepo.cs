@@ -17,6 +17,11 @@ namespace VocabBuilder.DataModel.Sql
             _context = new VocabBuilderContext();
         }
 
+        public WordRepo(string connStr)
+        {
+            _context = new VocabBuilderContext(connStr);
+        }
+
         public IEnumerable<Model.Word> GetWords()
         {
             var words = _context.Words.Select(w => w);

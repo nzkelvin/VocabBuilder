@@ -28,7 +28,7 @@ namespace VocabBuilder.Web
 
         private void RegisterServices(StandardKernel kernel)
         {
-            kernel.Bind<IWordRepo>().To<WordRepo>();
+            kernel.Bind<IWordRepo>().To<WordRepo>().WithConstructorArgument("VocalBuilderDbConnStr");
         }
     }
 }
